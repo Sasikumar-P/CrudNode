@@ -1,20 +1,25 @@
 {
-  "name": "api_no_db",
+  "name": "api_express_no_db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node_modules/.bin/nodemon --harmony -e js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EtienneR/api_express_no_db.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3"
+  "bugs": {
+    "url": "https://github.com/EtienneR/api_express_no_db/issues"
   },
-  "devDependencies": {
+  "homepage": "https://github.com/EtienneR/api_express_no_db#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.19.1"
   }
 }

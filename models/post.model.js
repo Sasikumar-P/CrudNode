@@ -1,6 +1,6 @@
 let posts = require('../data/posts.json')
-const filename = './data/posts.json'
 const helper = require('../helpers/helper.js')
+const filename = './data/posts.json'
 
 function getPosts() {
     return new Promise((resolve, reject) => {
@@ -22,6 +22,7 @@ function getPost(id) {
         .catch(err => reject(err))
     })
 }
+
 
 function insertPost(newPost) {
     return new Promise((resolve, reject) => {
@@ -67,10 +68,11 @@ function deletePost(id) {
     })
 }
 
+
 module.exports = {
-    insertPost,
     getPosts,
-    getPost, 
+    getPost,
+    insertPost,
     updatePost,
     deletePost
 }

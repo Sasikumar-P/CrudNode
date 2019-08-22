@@ -3,6 +3,8 @@ const router = express.Router()
 const post = require('../models/post.model')
 const m = require('../helpers/middlewares')
 
+
+
 /* All posts */
 router.get('/', async (req, res) => {
     await post.getPosts()
@@ -16,10 +18,10 @@ router.get('/', async (req, res) => {
     })
 })
 
+
 /* A post by id */
 router.get('/:id', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
-
     await post.getPost(id)
     .then(post => res.json(post))
     .catch(err => {
@@ -40,6 +42,7 @@ router.post('/', m.checkFieldsPost, async (req, res) => {
     }))
     .catch(err => res.status(500).json({ message: err.message }))
 })
+
 
 /* Update a post */
 router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
@@ -73,5 +76,9 @@ router.delete('/:id', m.mustBeInteger, async (req, res) => {
         res.status(500).json({ message: err.message })
     })
 })
+
+
+
+
 
 module.exports = router
